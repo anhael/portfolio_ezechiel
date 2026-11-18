@@ -1,0 +1,19 @@
+# Dépendances (si tu ajoutes un build plus tard)
+node_modules/
+dist/
+build/
+
+# Système / éditeurs
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Fichiers d'environnement (ne jamais publier de secrets)
+.env
+.env.*

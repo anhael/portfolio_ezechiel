@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+       SEO : remplace "Prénom Nom", l'URL et la description
+       ============================================================ -->
+  <title>Prénom Nom — Développeur Backend / Fullstack PHP & Node.js</title>
+  <meta name="description" content="Développeur backend / fullstack spécialisé PHP (Symfony, Laravel) et Node.js (NestJS). API REST, microservices, bases de données et applications métier." />
+  <meta name="author" content="Prénom Nom" />
+  <meta name="theme-color" content="#080b12" />
+  <link rel="canonical" href="https://votre-domaine.com/" />
+
+  <!-- Open Graph (aperçu lors du partage sur LinkedIn, Twitter, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Prénom Nom — Développeur Backend / Fullstack PHP & Node.js" />
+  <meta property="og:description" content="API REST, microservices et applications métier — Symfony, Laravel, Node.js, PostgreSQL." />
+  <meta property="og:url" content="https://votre-domaine.com" />
+  <meta property="og:image" content="https://votre-domaine.com/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Applique le thème mémorisé avant l'affichage (évite un flash blanc) -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem("portfolio-theme");
+      var systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
+    } catch (e) { /* navigation privée : on garde le thème sombre par défaut */ }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Données structurées pour Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prénom Nom",
+    "jobTitle": "Développeur Backend / Fullstack PHP & Node.js",
+    "url": "https://votre-domaine.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Antananarivo",
+      "addressCountry": "MG"
+    },
+    "knowsAbout": ["PHP", "Symfony", "Laravel", "Node.js", "NestJS", "Vue.js", "API REST", "gRPC", "Microservices", "PostgreSQL", "MySQL", "Supabase", "Docker"],
+    "sameAs": [
+      "https://github.com/votre-pseudo",
+      "https://www.linkedin.com/in/votre-profil"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- Barre de progression de lecture -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="#accueil" class="logo">
+        portfolio<span>.dev</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#apropos" class="nav-link">À propos</a></li>
+        <li><a href="#competences" class="nav-link">Compétences</a></li>
+        <li><a href="#projets" class="nav-link">Projets</a></li>
+        <li><a href="#parcours" class="nav-link">Parcours</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-mobile-cta">
+          <a href="assets/cv.pdf" class="btn btn-primary btn-sm" download>Télécharger mon CV</a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Changer de thème" title="Changer de thème">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Me contacter</a>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="accueil">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="badge reveal">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Disponible pour de nouveaux projets
+          </p>
+
+          <h1 class="reveal">
+            Je construis des <span class="gradient-text">API robustes</span>
+            et des applications web sur mesure.
+          </h1>
+
+          <p class="hero-role reveal">
+            <span class="role-prefix">&lt;/&gt;</span>
+            <span id="typewriter" class="typewriter" aria-live="polite">Développeur Backend / Fullstack</span>
+            <span class="caret" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero-text reveal">
+            Spécialisé en <strong>PHP</strong> (Symfony, Laravel) et
+            <strong>Node.js</strong> (NestJS), je conçois des applications métier,
+            des API et des architectures microservices.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a href="#projets" class="btn btn-primary">
+              Voir mes projets
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6"></path>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Me contacter</a>
+          </div>
+
+          <div class="hero-socials reveal">
+            <a href="https://github.com/votre-pseudo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.05.78 2.12v3.15c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/votre-profil" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a href="mailto:contact@votre-email.com" aria-label="Envoyer un email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Carte "éditeur de code" décorative -->
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card-top">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="code-file">developer.js</span>
+            </div>
+            <pre class="code-body"><code><span class="c-purple">const</span> <span class="c-blue">developer</span> = {
+  name: <span class="c-green">'Prénom Nom'</span>,
+  role: <span class="c-green">'Backend / Fullstack Dev'</span>,
+  location: <span class="c-green">'Antananarivo, MG'</span>,
+  stack: [
+    <span class="c-green">'Symfony'</span>, <span class="c-green">'Laravel'</span>,
+    <span class="c-green">'Node.js'</span>, <span class="c-green">'PostgreSQL'</span>
+  ],
+  <span class="c-blue">available</span>: <span class="c-orange">true</span>,
+  <span class="c-yellow">buildSomethingGreat</span>: () =&gt; {
+    <span class="c-purple">return</span> <span class="c-green">'Let\'s talk!'</span>;
+  }
+};</code></pre>
+            <div class="code-card-bottom">
+              <span class="status-dot"></span>
+              <span>Disponible pour missions freelance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chiffres clés -->
+      <div class="container">
+        <div class="stats reveal">
+          <div class="stat">
+            <span class="stat-number" data-count="3" data-suffix="+">0</span>
+            <span class="stat-label">Années d'expérience</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="6" data-suffix="">0</span>
+            <span class="stat-label">Expériences professionnelles</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="20" data-suffix="+">0</span>
+            <span class="stat-label">Technologies maîtrisées</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="5" data-suffix="+">0</span>
+            <span class="stat-label">Projets majeurs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         À PROPOS
+         ============================================================ -->
+    <section class="section" id="apropos">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">01 — À propos</p>
+          <h2 class="section-title">Le backend au centre, le produit en tête</h2>
+          <p class="section-subtitle">
+            Je conçois les API, les données et les architectures qui font tourner les applications métier.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              Je suis développeur <strong>backend / fullstack</strong>, spécialisé en
+              <strong>PHP</strong> (Symfony, Laravel) et <strong>Node.js</strong>
+              (NestJS). J'accompagne les entreprises dans la conception, le
+              développement et la maintenance de leurs applications métier, API et
+              services.
+            </p>
+            <p>
+              Mon expérience couvre des contextes variés : CRM, e-commerce, refonte
+              en microservices, back-offices et intégration de services tiers. J'aime
+              comprendre le besoin métier, modéliser les données proprement, puis
+              livrer des solutions maintenables et testées.
+            </p>
+            <p>
+              Je reste à l'aise côté front-end (Vue.js, React.js) pour intégrer les
+              interfaces et livrer une fonctionnalité de bout en bout — mais mon
+              terrain de jeu principal reste le back-end : API REST ou gRPC, données
+              et performance.
+            </p>
+
+            <ul class="about-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+                API REST, gRPC & architectures microservices
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+                Modélisation & optimisation des données
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+                Applications métier, CRM & back-offices
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+                Tests, maintenance & évolution d'applications
+              </li>
+            </ul>
+
+            <a href="assets/cv.pdf" class="btn btn-outline" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+              Télécharger mon CV
+            </a>
+          </div>
+
+          <div class="about-card reveal">
+            <div class="about-avatar" aria-hidden="true">
+              <span>PN</span>
+            </div>
+            <div class="about-card-body">
+              <h3>Prénom Nom</h3>
+              <p class="about-card-role">Développeur Backend / Fullstack</p>
+              <ul class="about-meta">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  Antananarivo, Madagascar · Remote
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  Freelance · CDI · Missions
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                  Ouvert aux opportunités
+                </li>
+              </ul>
+              <a href="#contact" class="btn btn-primary btn-block">Discutons de votre projet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMPÉTENCES
+         ============================================================ -->
+    <section class="section section-alt" id="competences">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">02 — Compétences</p>
+          <h2 class="section-title">Ma stack technique</h2>
+          <p class="section-subtitle">
+            Les outils que j'utilise au quotidien pour livrer des produits fiables.
+          </p>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skills-card reveal">
+            <div class="skills-icon icon-back">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg>
+            </div>
+            <h3>Backend &amp; API</h3>
+            <p>Des applications et API robustes, de la conception à la maintenance.</p>
+            <div class="tags">
+              <span class="tag">PHP</span>
+              <span class="tag">Symfony</span>
+              <span class="tag">Laravel</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">Java</span>
+              <span class="tag">REST</span>
+              <span class="tag">gRPC</span>
+              <span class="tag">WebSocket</span>
+            </div>
+          </article>
+
+          <article class="skills-card reveal">
+            <div class="skills-icon icon-tools">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5-9 5-9-5 9-5z"></path><path d="m3 12 9 5 9-5M3 17l9 5 9-5"></path></svg>
+            </div>
+            <h3>Données &amp; Architecture</h3>
+            <p>Des données bien modélisées, des services découplés et un workflow maîtrisé.</p>
+            <div class="tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">Tests unitaires</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Git</span>
+            </div>
+          </article>
+
+          <article class="skills-card reveal">
+            <div class="skills-icon icon-front">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8m-4-4v4"></path></svg>
+            </div>
+            <h3>Front-end &amp; CMS</h3>
+            <p>Des interfaces intégrées et des CMS adaptés aux besoins e-commerce.</p>
+            <div class="tags">
+              <span class="tag">HTML / CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">React.js</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">WordPress</span>
+              <span class="tag">PrestaShop</span>
+              <span class="tag">WooCommerce</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJETS
+         ============================================================ -->
+    <section class="section" id="projets">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">03 — Études de cas</p>
+          <h2 class="section-title">Trois projets, en profondeur</h2>
+          <p class="section-subtitle">
+            Contexte, rôle et résultat : trois réalisations représentatives de mon travail backend.
+          </p>
+        </header>
+
+        <div class="case-studies">
+          <!-- Étude de cas 1 -->
+          <article class="case-study reveal">
+            <div class="case-cover cover-1" aria-hidden="true">
+              <span class="cover-badge">CRM</span>
+              <span class="case-cover-index">01</span>
+              <div class="case-cover-body">
+                <span class="case-cover-label">Étude de cas</span>
+                <strong>Outil métier</strong>
+                <span class="case-cover-stack">Laravel · Vue.js</span>
+              </div>
+            </div>
+            <div class="case-body">
+              <div class="case-head">
+                <div>
+                  <h3>CRM &amp; outils internes</h3>
+                  <p class="case-meta">TSARAJORO · 2025 — 2026</p>
+                </div>
+                <span class="project-private" role="img" aria-label="Code source privé" title="Projet client — code source privé">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </span>
+              </div>
+              <div class="case-points">
+                <div class="case-point">
+                  <span class="case-point-label">Contexte</span>
+                  <p>
+                    Un besoin de centraliser clients, suivi commercial et tâches
+                    internes dans un outil unique, utilisé au quotidien par les équipes.
+                  </p>
+                </div>
+                <div class="case-point">
+                  <span class="case-point-label">Mon rôle</span>
+                  <p>
+                    Conception du modèle de données et des API REST sous Laravel,
+                    développement des fonctionnalités métier, intégration des
+                    interfaces Vue.js, maintenance et correction de bugs.
+                  </p>
+                </div>
+                <div class="case-point">
+                  <span class="case-point-label">Résultat</span>
+                  <p>
+                    Un CRM opérationnel au quotidien, des données centralisées et des
+                    évolutions livrées en continu sur une base de code maintenable.
+                  </p>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li>Laravel</li><li>Vue.js</li><li>MySQL</li><li>API REST</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Étude de cas 2 -->
+          <article class="case-study reveal">
+            <div class="case-cover cover-2" aria-hidden="true">
+              <span class="cover-badge">Microservices</span>
+              <span class="case-cover-index">02</span>
+              <div class="case-cover-body">
+                <span class="case-cover-label">Étude de cas</span>
+                <strong>Architecture distribuée</strong>
+                <span class="case-cover-stack">Symfony · Node.js · gRPC</span>
+              </div>
+            </div>
+            <div class="case-body">
+              <div class="case-head">
+                <div>
+                  <h3>Ticketing en microservices</h3>
+                  <p class="case-meta">NEXTHOPE · 2023 — 2024</p>
+                </div>
+                <span class="project-private" role="img" aria-label="Code source privé" title="Projet client — code source privé">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </span>
+              </div>
+              <div class="case-points">
+                <div class="case-point">
+                  <span class="case-point-label">Contexte</span>
+                  <p>
+                    Refonte d'une application de ticketing historique en architecture
+                    microservices, avec intégration de services tiers et besoin de
+                    modularité.
+                  </p>
+                </div>
+                <div class="case-point">
+                  <span class="case-point-label">Mon rôle</span>
+                  <p>
+                    Conception d'API gRPC, développement de services Symfony et
+                    Node.js, modélisation des données PostgreSQL / NoSQL et intégration
+                    d'un template Vue.js.
+                  </p>
+                </div>
+                <div class="case-point">
+                  <span class="case-point-label">Résultat</span>
+                  <p>
+                    Des services découplés et plus faciles à faire évoluer, une base
+                    saine pour absorber la montée en charge et ajouter de nouveaux
+                    modules.
+                  </p>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li>Symfony</li><li>Node.js</li><li>gRPC</li><li>PostgreSQL</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Étude de cas 3 -->
+          <article class="case-study reveal">
+            <div class="case-cover cover-3" aria-hidden="true">
+              <span class="cover-badge">Fidélité</span>
+              <span class="case-cover-index">03</span>
+              <div class="case-cover-body">
+                <span class="case-cover-label">Étude de cas</span>
+                <strong>Fidélité &amp; e-commerce</strong>
+                <span class="case-cover-stack">Node.js · NestJS · Supabase</span>
+              </div>
+            </div>
+            <div class="case-body">
+              <div class="case-head">
+                <div>
+                  <h3>Gestion de commerçants &amp; points de récompense</h3>
+                  <p class="case-meta">Mission freelance · 2024</p>
+                </div>
+                <span class="project-private" role="img" aria-label="Code source privé" title="Projet client — code source privé">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </span>
+              </div>
+              <div class="case-points">
+                <div class="case-point">
+                  <span class="case-point-label">Contexte</span>
+                  <p>
+                    Une application de gestion de commerçants et d'attribution de
+                    points de récompense, avec back-office et intégration aux modules
+                    e-commerce.
+                  </p>
+                </div>
+                <div class="case-point">
+                  <span class="case-point-label">Mon rôle</span>
+                  <p>
+                    Développement backend en Node.js / NestJS, conception des API REST,
+                    back-office sous Supabase, modules PrestaShop et tests unitaires.
+                  </p>
+                </div>
+                <div class="case-point">
+                  <span class="case-point-label">Résultat</span>
+                  <p>
+                    Une gestion centralisée des commerçants et des points, des règles
+                    de récompense automatisées et un socle couvert par des tests.
+                  </p>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li>Node.js</li><li>NestJS</li><li>Supabase</li><li>API REST</li><li>PrestaShop</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <!-- Autres réalisations -->
+        <div class="other-projects reveal">
+          <h3 class="other-projects-title">Autres réalisations</h3>
+          <ul class="other-projects-list">
+            <li>
+              <div class="other-project-info">
+                <strong>Plateforme SEO</strong>
+                <p>Suivi et optimisation du référencement : indicateurs, tableaux de bord et analyse.</p>
+              </div>
+              <span class="other-project-stack">Laravel · Vue.js</span>
+            </li>
+            <li>
+              <div class="other-project-info">
+                <strong>PharmaShop</strong>
+                <p>E-commerce pharmaceutique et migration du catalogue de WooCommerce vers PrestaShop.</p>
+              </div>
+              <span class="other-project-stack">WooCommerce · PrestaShop · PHP</span>
+            </li>
+            <li>
+              <div class="other-project-info">
+                <strong>Application voyage</strong>
+                <p>Maintenance et évolutions d'une application Laravel : bugs, fonctionnalités et performances.</p>
+              </div>
+              <span class="other-project-stack">Laravel · PHP</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="projects-more reveal">
+          <a href="#contact" class="btn btn-outline">
+            Discutons de ces projets
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PARCOURS
+         ============================================================ -->
+    <section class="section section-alt" id="parcours">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">04 — Parcours</p>
+          <h2 class="section-title">Mon expérience</h2>
+          <p class="section-subtitle">
+            Les étapes qui ont construit ma façon de développer.
+          </p>
+        </header>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <h3>Responsable Système Informatique / Développeur</h3>
+                <span class="timeline-date">05/2026 — Aujourd'hui</span>
+              </div>
+              <p class="timeline-company">Sustainable Food Solution SARL</p>
+              <p>
+                Maintenance des outils, logiciels et applications informatiques.
+                Ajout de nouvelles fonctionnalités selon les besoins métier et
+                amélioration des interfaces existantes.
+              </p>
+              <ul class="timeline-tags">
+                <li>Maintenance</li><li>Applications métier</li><li>Interfaces</li><li>Support</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <h3>Consultant Développeur Front-Backend (Laravel / Vue.js)</h3>
+                <span class="timeline-date">01/2025 — 02/2026</span>
+              </div>
+              <p class="timeline-company">TSARAJORO</p>
+              <p>
+                Développement et maintenance d'un CRM, d'une application de suivi SEO
+                et d'API REST. Maintenance WordPress et correction de bugs pour
+                garantir la stabilité des applications.
+              </p>
+              <ul class="timeline-tags">
+                <li>Laravel</li><li>Vue.js</li><li>API REST</li><li>WordPress</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <h3>Freelance Développeur Symfony / Laravel</h3>
+                <span class="timeline-date">10/2024 — 01/2025</span>
+              </div>
+              <p class="timeline-company">Client indépendant</p>
+              <p>
+                Développement d'un site e-commerce pharmaceutique sous WooCommerce,
+                migration vers PrestaShop et maintenance d'une application de voyage
+                en Laravel (bugs, évolutions et performances).
+              </p>
+              <ul class="timeline-tags">
+                <li>Symfony</li><li>Laravel</li><li>WooCommerce</li><li>PrestaShop</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <h3>Développeur Backend consultant (Node.js / NestJS)</h3>
+                <span class="timeline-date">2024</span>
+              </div>
+              <p class="timeline-company">Mission freelance · Backend</p>
+              <p>
+                Développement backend d'une application de gestion de commerçants et
+                d'attribution de points de récompense. Back-office sous Supabase,
+                modules PrestaShop, tests unitaires et API REST.
+              </p>
+              <ul class="timeline-tags">
+                <li>Node.js</li><li>NestJS</li><li>Supabase</li><li>API REST</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <h3>Développeur Backend (Node.js / Symfony / Vue.js)</h3>
+                <span class="timeline-date">03/2023 — 05/2024</span>
+              </div>
+              <p class="timeline-company">NEXTHOPE Société</p>
+              <p>
+                Refonte d'une application de ticketing en microservices. Conception
+                d'API gRPC, développement de services Symfony et Node.js, intégration
+                d'un template Vue.js et gestion de bases PostgreSQL / NoSQL.
+              </p>
+              <ul class="timeline-tags">
+                <li>Symfony</li><li>Node.js</li><li>gRPC</li><li>Vue.js</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <h3>Développeur Android (Java)</h3>
+                <span class="timeline-date">02/2023 — 03/2023</span>
+              </div>
+              <p class="timeline-company">EQIMA Solutions · Stage</p>
+              <p>
+                Développement d'une application mobile Android en Java, de la
+                conception des écrans à l'intégration des fonctionnalités.
+              </p>
+              <ul class="timeline-tags">
+                <li>Java</li><li>Android</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="education reveal">
+          <div class="education-header">
+            <h3>Formation</h3>
+            <p>Deux diplômes d'ingénierie, un socle scientifique et technique.</p>
+          </div>
+          <ul class="education-list">
+            <li>
+              <div>
+                <strong>Master d'Ingénierie en Système Électronique Informatique (M.I.S.E.I)</strong>
+                <span class="education-school">Université d'Antananarivo</span>
+              </div>
+              <span class="timeline-date">2020 — 2022</span>
+            </li>
+            <li>
+              <div>
+                <strong>Licence d'Ingénierie en Physique des Signaux et Systèmes (L.I.P.S.S)</strong>
+                <span class="education-school">Université d'Antananarivo</span>
+              </div>
+              <span class="timeline-date">2017 — 2019</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-wrapper reveal">
+          <div class="contact-info">
+            <p class="section-eyebrow">05 — Contact</p>
+            <h2>Un projet en tête ?<br /><span class="gradient-text">Parlons-en.</span></h2>
+            <p>
+              Une idée, une application métier à développer ou à faire évoluer ?
+              Écrivez-moi, je réponds sous 24 h. Je suis ouvert aux missions
+              freelance, au CDI et aux collaborations à distance.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </span>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:contact@votre-email.com">contact@votre-email.com</a>
+                </div>
+              </li>
+              <li>
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </span>
+                <div>
+                  <span class="contact-label">Localisation</span>
+                  <span>Antananarivo, Madagascar · Remote</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                </span>
+                <div>
+                  <span class="contact-label">Disponibilité</span>
+                  <span>Ouvert aux opportunités · Sous 24 h</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="contact-socials">
+              <a href="https://github.com/votre-pseudo" target="_blank" rel="noopener noreferrer" class="social-pill">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.05.78 2.12v3.15c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/votre-profil" target="_blank" rel="noopener noreferrer" class="social-pill">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <!-- Anti-spam simple : laisser vide -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">Ne pas remplir</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required autocomplete="name" />
+                <span class="form-error" data-error-for="name"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="vous@exemple.com" required autocomplete="email" />
+                <span class="form-error" data-error-for="email"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Ex : Création d'un site e-commerce" required />
+              <span class="form-error" data-error-for="subject"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet en quelques lignes..." required></textarea>
+              <span class="form-error" data-error-for="message"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Envoyer le message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7z"></path><path d="M22 2 11 13"></path></svg>
+            </button>
+
+            <p class="form-note">
+              Ce formulaire ouvre votre messagerie. Pour un envoi direct sans
+              client mail, connectez-le à <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a>
+              (voir le README).
+            </p>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#accueil" class="logo">portfolio<span>.dev</span></a>
+        <p>Développeur backend / fullstack PHP &amp; Node.js — API, applications métier et e-commerce.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Liens du pied de page">
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-socials">
+        <a href="https://github.com/votre-pseudo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.05.78 2.12v3.15c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/votre-profil" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:contact@votre-email.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Prénom Nom. Tous droits réservés.</p>
+      <p>Conçu & développé avec <span class="heart">♥</span> — HTML, CSS & JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- Bouton retour en haut -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Retour en haut de la page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
