@@ -1,0 +1,26 @@
+# Configuration Netlify - site statique, aucun build
+# Dépôt privé accepté : le code reste privé, le site est public.
+
+[build]
+  publish = "."
+
+# En-têtes de sécurité sur toutes les pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Cache court pour les ressources (CSS/JS/images) : le CV peut changer sans renommage
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Le HTML ne doit jamais être servi depuis le cache
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
