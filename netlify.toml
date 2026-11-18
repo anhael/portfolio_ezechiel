@@ -17,7 +17,7 @@
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=600, must-revalidate"
 
 # Le HTML ne doit jamais être servi depuis le cache
 [[headers]]
